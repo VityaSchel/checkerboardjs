@@ -1,0 +1,14 @@
+{
+  "name": "checkerboardjs",
+  "version": "1.0.7",
+  "description": "Easily draw transparency pattern on canvas when flattenning images",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "canvas"
+  ],
+  "author": "vityaschel <vityaschel@utidteam.com> (https://vityaschel.utidteam.com/)",
+  "license": "MIT"
+}
