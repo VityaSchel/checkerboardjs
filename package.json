@@ -1,8 +1,8 @@
 {
   "name": "checkerboardjs",
-  "version": "1.0.8",
+  "version": "1.0.11",
   "description": "Easily draw transparency pattern on canvas when flattenning images",
-  "main": "index.js",
+  "main": "index.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

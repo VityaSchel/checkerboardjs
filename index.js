@@ -6,26 +6,29 @@ export default function drawPattern(canvas, options) {
     if(!(canvas instanceof HTMLCanvasElement)) throw { message: 'canvas is not an instance of HTMLCanvasElement', libwarn: true }
     if(options && options.size && typeof options?.size !== 'number') throw { message: 'options.size is not a number', libwarn: true }
 
-    const context = canvas.getContext('2d')
-    const size = options?.size || 10
-    const repeatX = Math.ceil(canvas.width/size)
-    const repeatY = Math.ceil(canvas.height/size)
     options = options || {}
+    options.size = options?.size || 10
     options.primaryColor = options?.primaryColor || '#EDEDED'
     options.secondaryColor = options?.secondaryColor || '#C6C6C6'
 
+    const context = canvas.getContext('2d')
+    const repeatX = Math.ceil(canvas.width / options.size)
+    const repeatY = Math.ceil(canvas.height / options.size)
+
     for(let y = 0; y < repeatY; y++) {
       for(let x = 0; x < repeatX; x++) {
-        context.fillStyle = x % 2 === y % 2 ? options.primaryColor : options.secondaryColor
-        let posX = x*size
-        let posY = y*size
+        let posX = x*options.size
+        let posY = y*options.size
+
         if(options.centered) {
-          let extraWidth = repeatX*size - canvas.width
-          let extraHeight = repeatY*size - canvas.height
+          let extraWidth = repeatX*options.size - canvas.width
+          let extraHeight = repeatY*options.size - canvas.height
           posX -= extraWidth/2
           posY -= extraHeight/2
         }
-        context.fillRect(posX, posY, size, size)
+
+        context.fillStyle = x % 2 === y % 2 ? options.primaryColor : options.secondaryColor
+        context.fillRect(posX, posY, options.size, options.size)
       }
     }
 

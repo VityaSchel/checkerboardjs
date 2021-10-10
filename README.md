@@ -2,6 +2,8 @@
 
 Easily draw transparency pattern on canvas when flattenning images
 
+Dependency-free, 1.7kB gzipped. Idk if it's large it literally has 40 lines unpacked, and 1024 chars in total packed, if u really care about each byte, stop using javascript and canvas bro
+
 ## Installation
 
 ```
