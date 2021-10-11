@@ -13,7 +13,7 @@ $ npm i checkerboardjs
 ## Usage
 
 ```
-drawPattern(context<CanvasRenderingContext>, ?options<Object>)
+drawPattern(canvas<HTMLCanvasElement>, ?options<Object>)
 ```
 
 ### Options
@@ -32,9 +32,7 @@ size|number|10|Size of cell in pixels
 import drawPattern from 'checkerboardjs'
 
 const canvas = document.querySelector('canvas')
-const context = canvas.getContext('2d')
-
-drawPattern(context)
+drawPattern(canvas)
 ```
 
 ## Contributing, license, issues
